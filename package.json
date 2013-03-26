@@ -1,0 +1,23 @@
+{
+  "name": "pushbullet",
+  "version": "0.1.0",
+  "description": "Use PushBullets REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexwhitman/node-pushbullet-api"
+  },
+  "keywords": [
+    "pushbullet",
+    "api",
+    "rest"
+  ],
+  "author": "Alex Whitman <alex@alexwhitman.com>",
+  "license": "BSD",
+  "dependencies": {
+    "request": "~2.16.6"
+  }
+}
