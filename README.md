@@ -49,7 +49,7 @@ pusher.note(12345, 'New Note', 'Note body text', function(error, response) {});
 Push an address to the specified device.
 
 ```javascript
-pusher.note(12345, 'Fake Address', '10 Fake Street, Fakesville', function(error, response) {});
+pusher.address(12345, 'Fake Address', '10 Fake Street, Fakesville', function(error, response) {});
 ```
 
 ### PushBullet.list(deviceId, name, listItems, callback)
@@ -64,7 +64,7 @@ var shoppingList = [
 	'buns',
 	'beer'
 ]
-pusher.note(12345, 'BBQ', shoppingList, function(error, response) {});
+pusher.list(12345, 'BBQ', shoppingList, function(error, response) {});
 ```
 
 ### PushBullet.link(deviceId, name, url, callback)
