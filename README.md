@@ -82,3 +82,13 @@ Push a file to the specified device.
 ```javascript
 pusher.file(12345, '/path/to/file', function(error, response) {});
 ```
+
+## Releases
+
+### 0.2.0
+
+- Update API URL
+
+### 0.1.0
+
+- Initial release
