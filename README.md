@@ -85,6 +85,10 @@ pusher.file(12345, '/path/to/file', function(error, response) {});
 
 ## Releases
 
+### 0.3.0
+
+- Use JSON post body rather than form encoding. Fixes empty lists.
+
 ### 0.2.0
 
 - Update API URL
