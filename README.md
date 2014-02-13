@@ -14,10 +14,12 @@ pusher.devices(function(error, response) {
 	// response is the JSON response from the API
 });
 
-pusher.note(deviceId, noteTitle, noteBody, function(error, response) {
+pusher.note(deviceIden, noteTitle, noteBody, function(error, response) {
 	// response is the JSON response from the API
 });
 ```
+
+Both device IDENs and device IDs can be used.  If the `deviceIden` parameter is passed as a number it is treated as a device ID.
 
 ## Callbacks
 
@@ -36,23 +38,23 @@ Retrieves a list of pushable devices.
 pusher.devices(function(error, response) {});
 ```
 
-### PushBullet.note(deviceId, noteTitle, noteBody, callback)
+### PushBullet.note(deviceIden, noteTitle, noteBody, callback)
 
 Push a note to the specified device.
 
 ```javascript
-pusher.note(12345, 'New Note', 'Note body text', function(error, response) {});
+pusher.note('u1qSJddxeKwOGuGW', 'New Note', 'Note body text', function(error, response) {});
 ```
 
-### PushBullet.address(deviceId, name, address, callback)
+### PushBullet.address(deviceIden, name, address, callback)
 
 Push an address to the specified device.
 
 ```javascript
-pusher.address(12345, 'Fake Address', '10 Fake Street, Fakesville', function(error, response) {});
+pusher.address('u1qSJddxeKwOGuGW', 'Fake Address', '10 Fake Street, Fakesville', function(error, response) {});
 ```
 
-### PushBullet.list(deviceId, name, listItems, callback)
+### PushBullet.list(deviceIden, name, listItems, callback)
 
 Push a list to the specified device.
 
@@ -63,27 +65,31 @@ var shoppingList = [
 	'burgers',
 	'buns',
 	'beer'
-]
-pusher.list(12345, 'BBQ', shoppingList, function(error, response) {});
+];
+pusher.list('u1qSJddxeKwOGuGW', 'BBQ', shoppingList, function(error, response) {});
 ```
 
-### PushBullet.link(deviceId, name, url, callback)
+### PushBullet.link(deviceIden, name, url, callback)
 
 Push a link to the specified device.
 
 ```javascript
-pusher.link(12345, 'GitHub', 'https://github.com/', function(error, response) {});
+pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', function(error, response) {});
 ```
 
-### PushBullet.file(deviceId, filePath, callback)
+### PushBullet.file(deviceIden, filePath, callback)
 
 Push a file to the specified device.
 
 ```javascript
-pusher.file(12345, '/path/to/file', function(error, response) {});
+pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', function(error, response) {});
 ```
 
 ## Releases
+
+### 0.4.0
+
+- Support and prefer using device IDENs over device IDs.
 
 ### 0.3.0
 
