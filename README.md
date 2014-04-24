@@ -87,6 +87,10 @@ pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', function(error, response) {});
 
 ## Releases
 
+### 0.5.0
+
+- Set request defaults locally so multiple instances can be used.
+
 ### 0.4.0
 
 - Support and prefer using device IDENs over device IDs.

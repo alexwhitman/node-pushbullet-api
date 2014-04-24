@@ -1,6 +1,6 @@
 {
   "name": "pushbullet",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Use PushBullets REST API",
   "main": "index.js",
   "scripts": {
