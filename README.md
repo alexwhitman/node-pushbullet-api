@@ -38,6 +38,14 @@ Retrieves a list of pushable devices.
 pusher.devices(function(error, response) {});
 ```
 
+### Pushbullet.deleteDevice(deviceIden, callback)
+
+Delete a device.
+
+```javascript
+pusher.deleteDevice('u1qSJddxeKwOGuGW', function(error, response) {});
+```
+
 ### PushBullet.note(deviceIden, noteTitle, noteBody, callback)
 
 Push a note to the specified device.
