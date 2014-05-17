@@ -46,6 +46,22 @@ Delete a device.
 pusher.deleteDevice('u1qSJddxeKwOGuGW', function(error, response) {});
 ```
 
+### PushBullet.contacts(callback)
+
+Retrieves a list of pushable contacts.
+
+```javascript
+pusher.contacts(function(error, response) {});
+```
+
+### Pushbullet.deleteContact(contactIden, callback)
+
+Delete a contact.
+
+```javascript
+pusher.deleteContact('ubdcjAfszs0Smi', function(error, response) {});
+```
+
 ### PushBullet.note(deviceIden, noteTitle, noteBody, callback)
 
 Push a note to the specified device.
