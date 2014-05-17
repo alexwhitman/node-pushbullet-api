@@ -143,6 +143,103 @@ var options = {
 pusher.history(options, function(error, response) {})
 ```
 
+### PushBullet.stream()
+
+Returns a new stream listener which will emit events from the stream.
+
+```javascript
+var stream = pusher.stream();
+```
+
+#### connect()
+
+Connects to the stream.
+
+```javascript
+stream.connect();
+```
+
+#### close()
+
+Disconnects from the stream.
+
+```javascript
+stream.close();
+```
+
+#### Events
+
+##### connect
+
+Emitted when the stream has connected.
+
+```javascript
+stream.on('connect', function() {
+	// stream has connected
+});
+```
+
+##### close
+
+Emitted when the stream has disconnected.
+
+```javascript
+stream.on('close', function() {
+	// stream has disconnected
+});
+```
+
+##### error
+
+Emitted when there is a connection or streaming error.
+
+```javascript
+stream.on('error', function(error) {
+	// stream error
+});
+```
+
+##### message
+
+Emitted when a message is received from the stream.  `message` will be emitted for all messages
+but you can listen for specific messages with `nop`, `tickle` and `push`.
+
+```javascript
+stream.on('message', function(message) {
+	// message received
+});
+```
+
+##### nop
+
+Emitted when the keep-alive 'no-operation' message is received.
+
+```javascript
+stream.on('nop', function() {
+	// nop message received
+});
+```
+
+##### tickle
+
+Emitted when the `tickle` message is received.
+
+```javascript
+stream.on('tickle', function(type) {
+	// tickle message received
+});
+```
+
+##### push
+
+Emited when the `push` message is received.
+
+```javascript
+stream.on('push', function(push) {
+	// push message received
+});
+```
+
 ## Releases
 
 ### 0.5.0
