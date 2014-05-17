@@ -30,6 +30,14 @@ If an error occurs at any part of the request the first argument will be an Erro
 
 ## API
 
+### PushBullet.me(callback);
+
+Get the current user's information.
+
+```javascript
+pusher.me(function(err, response) {});
+```
+
 ### PushBullet.devices(callback)
 
 Retrieves a list of pushable devices.
