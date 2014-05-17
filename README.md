@@ -85,6 +85,14 @@ Push a file to the specified device.
 pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
 ```
 
+### Pushbullet.deletePush(pushIden, callback)
+
+Delete a push.
+
+```javascript
+pusher.deletePush('udhrSpjAewzdwpCC', function(error, response) {});
+```
+
 ## Releases
 
 ### 0.5.0
