@@ -46,7 +46,7 @@ Retrieves a list of pushable devices.
 pusher.devices(function(error, response) {});
 ```
 
-### Pushbullet.deleteDevice(deviceIden, callback)
+### PushBullet.deleteDevice(deviceIden, callback)
 
 Delete a device.
 
@@ -62,7 +62,7 @@ Retrieves a list of pushable contacts.
 pusher.contacts(function(error, response) {});
 ```
 
-### Pushbullet.deleteContact(contactIden, callback)
+### PushBullet.deleteContact(contactIden, callback)
 
 Delete a contact.
 
@@ -117,7 +117,7 @@ Push a file to the specified device.
 pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
 ```
 
-### Pushbullet.deletePush(pushIden, callback)
+### PushBullet.deletePush(pushIden, callback)
 
 Delete a push.
 
