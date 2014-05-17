@@ -77,12 +77,12 @@ Push a link to the specified device.
 pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', function(error, response) {});
 ```
 
-### PushBullet.file(deviceIden, filePath, callback)
+### PushBullet.file(deviceIden, filePath, message, callback)
 
 Push a file to the specified device.
 
 ```javascript
-pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', function(error, response) {});
+pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
 ```
 
 ## Releases

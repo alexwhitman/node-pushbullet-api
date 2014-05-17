@@ -18,6 +18,8 @@
   "author": "Alex Whitman <alex@alexwhitman.com>",
   "license": "BSD",
   "dependencies": {
-    "request": "~2.16.6"
+    "form-data": "~0.1.2",
+    "mime": "~1.2.11",
+    "request": "~2.34.0"
   }
 }
