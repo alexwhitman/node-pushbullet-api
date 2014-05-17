@@ -125,6 +125,24 @@ Delete a push.
 pusher.deletePush('udhrSpjAewzdwpCC', function(error, response) {});
 ```
 
+### PushBullet.history(options, callback)
+
+Get the push history.
+
+The `options` parameter can use two attributes `modified_after` and `cursor`
+to control the data returned.
+
+- `modified_after` should be a timestamp.
+- `cursor` is used to select the page if the results have been paginated.
+
+```javascript
+var options = {
+	modified_after: 1400000000.00000
+}
+
+pusher.history(options, function(error, response) {})
+```
+
 ## Releases
 
 ### 0.5.0
