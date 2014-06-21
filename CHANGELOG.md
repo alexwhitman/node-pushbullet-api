@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.1.0
+
+- Add `createDevice` function.
+
 ### 1.0.0
 
 - Upgrade to and support version 2 of the API.

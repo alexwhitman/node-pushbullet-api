@@ -46,6 +46,14 @@ Retrieves a list of pushable devices.
 pusher.devices(function(error, response) {});
 ```
 
+### PushBullet.createDevice(nickname, callback)
+
+Creates a new device.
+
+```javascript
+pusher.createDevice('Device name', function(error, response) {});
+```
+
 ### PushBullet.deleteDevice(deviceIden, callback)
 
 Delete a device.
