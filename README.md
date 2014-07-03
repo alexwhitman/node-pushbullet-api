@@ -70,6 +70,14 @@ Retrieves a list of pushable contacts.
 pusher.contacts(function(error, response) {});
 ```
 
+### PushBullet.createContact(name, email, callback)
+
+Create a contact.
+
+```javascript
+pusher.createContact('Bob', 'bob@test.com', function(error, response) {});
+```
+
 ### PushBullet.deleteContact(contactIden, callback)
 
 Delete a contact.
