@@ -133,6 +133,16 @@ Push a file to the specified device.
 pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
 ```
 
+### PushBullet.updatePush(pushIden, callback)
+
+Update a push.
+
+Currently only marks a push as dismissed.
+
+```javascript
+pusher.updatePush('udhrSpjAewzdwpCC', function(error, response) {});
+```
+
 ### PushBullet.deletePush(pushIden, callback)
 
 Delete a push.
