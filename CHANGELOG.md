@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.3.0
+
+- Add options parameter to `contacts`, `devices` and `history` to control responses.
+
 ### 1.2.0
 
 - Add `createContact` function.
