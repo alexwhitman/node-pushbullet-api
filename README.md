@@ -38,12 +38,22 @@ Get the current user's information.
 pusher.me(function(err, response) {});
 ```
 
-### PushBullet.devices(callback)
+### PushBullet.devices([options], callback)
 
 Retrieves a list of pushable devices.
 
+The `options` parameter can use two attributes `cursor` and`limit`
+to control the data returned.
+
+- `cursor` is used to select the page if the results have been paginated.
+- `limit` is used to limit the number of objects in the reponse.
+
 ```javascript
-pusher.devices(function(error, response) {});
+var options = {
+	limit: 10
+};
+
+pusher.devices(options, function(error, response) {});
 ```
 
 ### PushBullet.createDevice(nickname, callback)
@@ -62,12 +72,22 @@ Delete a device.
 pusher.deleteDevice('u1qSJddxeKwOGuGW', function(error, response) {});
 ```
 
-### PushBullet.contacts(callback)
+### PushBullet.contacts([options], callback)
 
 Retrieves a list of pushable contacts.
 
+The `options` parameter can use two attributes `cursor` and`limit`
+to control the data returned.
+
+- `cursor` is used to select the page if the results have been paginated.
+- `limit` is used to limit the number of objects in the reponse.
+
 ```javascript
-pusher.contacts(function(error, response) {});
+var options = {
+	limit: 10
+};
+
+pusher.contacts(options, function(error, response) {});
 ```
 
 ### PushBullet.createContact(name, email, callback)
@@ -151,20 +171,22 @@ Delete a push.
 pusher.deletePush('udhrSpjAewzdwpCC', function(error, response) {});
 ```
 
-### PushBullet.history(options, callback)
+### PushBullet.history([options], callback)
 
 Get the push history.
 
-The `options` parameter can use two attributes `modified_after` and `cursor`
-to control the data returned.
+The `options` parameter can use three attributes `cursor`, `limit` and
+`modified_after` to control the data returned.
 
-- `modified_after` should be a timestamp.
 - `cursor` is used to select the page if the results have been paginated.
+- `limit` is used to limit the number of objects in the reponse.
+- `modified_after` should be a timestamp.
 
 ```javascript
 var options = {
+	limit: 10,
 	modified_after: 1400000000.00000
-}
+};
 
 pusher.history(options, function(error, response) {})
 ```
