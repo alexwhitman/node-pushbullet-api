@@ -198,6 +198,38 @@ var options = {
 pusher.history(options, function(error, response) {})
 ```
 
+### PushBullet.subscriptions(callback)
+
+Get a list of current subscriptions.
+
+```javascript
+pusher.subscriptions(function(error, response) {});
+```
+
+### PushBullet.subscribe(channelTag, callback)
+
+Subscribe to a channel.
+
+```javascript
+pusher.subscribe('jblow', function(error, response) {});
+```
+
+### PushBullet.unsubscribe(subscriptionIden, callback)
+
+Subscribe to a channel.
+
+```javascript
+pusher.unsubscribe('udprOsjAsLtNTRAG', function(error, response) {});
+```
+
+### PushBullet.channelInfo(channelTag, callback)
+
+Get information about a channel.
+
+```javascript
+pusher.channelInfo('jblow', function(error, response) {});
+```
+
 ### PushBullet.stream()
 
 Returns a new stream listener which will emit events from the stream.
