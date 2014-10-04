@@ -160,14 +160,40 @@ Push a file to the specified device.
 pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
 ```
 
-### PushBullet.updatePush(pushIden, callback)
+### PushBullet.updatePush(pushIden, updates, callback)
 
 Update a push.
 
-Currently only marks a push as dismissed.
+Use to dismiss pushes or to update lists.
 
 ```javascript
-pusher.updatePush('udhrSpjAewzdwpCC', function(error, response) {});
+var updates = {
+	dismissed: true,
+	items: [
+		{
+			text: 'steaks',
+			checked: true
+		}
+		{
+			text: 'sausages',
+			checked: true
+		}
+		{
+			text: 'burgers',
+			checked: true
+		}
+		{
+			text: 'buns',
+			checked: true
+		}
+		{
+			text: 'beer',
+			checked: true
+		}
+	]
+}
+
+pusher.updatePush('udhrSpjAewzdwpCC', updates, function(error, response) {});
 ```
 
 ### PushBullet.deletePush(pushIden, callback)
