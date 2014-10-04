@@ -14,12 +14,19 @@ pusher.devices(function(error, response) {
 	// response is the JSON response from the API
 });
 
-pusher.note(deviceIden, noteTitle, noteBody, function(error, response) {
+pusher.note(deviceParams, noteTitle, noteBody, function(error, response) {
 	// response is the JSON response from the API
 });
 ```
 
-Both device IDENs and device IDs can be used.  If the `deviceIden` parameter is passed as a number it is treated as a device ID.
+### Target devices
+
+The push functions (`note`, `address`, `list`, `link`, `file`) have a `deviceParams` parameter which can be several types:
+
+- If it is a string containing an '@' it is treated as an email address.
+- If it is a string not containing an '@' it is treated as a device iden.
+- If it is a number it is treated as a device id.
+- If it is an object it is assumed to have one of the 'target parameters' as defined on https://docs.pushbullet.com/v2/pushes/ as an attribute.  It can also have an optional `source_device_iden` attribute.
 
 ## Callbacks
 
@@ -106,7 +113,7 @@ Delete a contact.
 pusher.deleteContact('ubdcjAfszs0Smi', function(error, response) {});
 ```
 
-### PushBullet.note(deviceIden, noteTitle, noteBody, callback)
+### PushBullet.note(deviceParams, noteTitle, noteBody, callback)
 
 Push a note to the specified device.
 
@@ -114,7 +121,7 @@ Push a note to the specified device.
 pusher.note('u1qSJddxeKwOGuGW', 'New Note', 'Note body text', function(error, response) {});
 ```
 
-### PushBullet.address(deviceIden, name, address, callback)
+### PushBullet.address(deviceParams, name, address, callback)
 
 Push an address to the specified device.
 
@@ -122,7 +129,7 @@ Push an address to the specified device.
 pusher.address('u1qSJddxeKwOGuGW', 'Fake Address', '10 Fake Street, Fakesville', function(error, response) {});
 ```
 
-### PushBullet.list(deviceIden, name, listItems, callback)
+### PushBullet.list(deviceParams, name, listItems, callback)
 
 Push a list to the specified device.
 
@@ -137,7 +144,7 @@ var shoppingList = [
 pusher.list('u1qSJddxeKwOGuGW', 'BBQ', shoppingList, function(error, response) {});
 ```
 
-### PushBullet.link(deviceIden, name, url, callback)
+### PushBullet.link(deviceParams, name, url, callback)
 
 Push a link to the specified device.
 
@@ -145,7 +152,7 @@ Push a link to the specified device.
 pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', function(error, response) {});
 ```
 
-### PushBullet.file(deviceIden, filePath, message, callback)
+### PushBullet.file(deviceParams, filePath, message, callback)
 
 Push a file to the specified device.
 
