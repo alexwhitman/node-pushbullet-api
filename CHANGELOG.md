@@ -1,5 +1,12 @@
 ## Changelog
 
+### 1.4.0
+
+- Add support for subscriptions API.
+- Update `updatePush` so that lists can be updated.
+- Add support for more target types.
+- Fix missing parameter in `contacts` function.
+
 ### 1.3.0
 
 - Add options parameter to `contacts`, `devices` and `history` to control responses.
