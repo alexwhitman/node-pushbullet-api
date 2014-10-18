@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.4.1
+
+- Fix usage of `file`.
+
 ### 1.4.0
 
 - Add support for subscriptions API.
