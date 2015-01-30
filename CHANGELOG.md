@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.4.3
+
+- Check file existence before trying to push.
+
 ### 1.4.2
 
 - Fix error message handling.
