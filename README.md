@@ -26,7 +26,7 @@ The push functions (`note`, `address`, `list`, `link`, `file`) have a `devicePar
 - If it is a string containing an '@' it is treated as an email address.
 - If it is a string not containing an '@' it is treated as a device iden.
 - If it is a number it is treated as a device id.
-- If it is an object it is assumed to have one of the 'target parameters' as defined on https://docs.pushbullet.com/v2/pushes/ as an attribute.  It can also have an optional `source_device_iden` attribute.
+- If it is an object it is assumed to have one of the 'target parameters' as defined on https://docs.pushbullet.com/v2/pushes/ as an attribute.  It can also have an optional `source_device_iden` attribute.  If the object is empty, `{}`, then the push is sent to all devices.
 
 ## Callbacks
 
