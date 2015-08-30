@@ -144,7 +144,7 @@ var shoppingList = [
 pusher.list('u1qSJddxeKwOGuGW', 'BBQ', shoppingList, function(error, response) {});
 ```
 
-### PushBullet.link(deviceParams, name, url, callback)
+### PushBullet.link(deviceParams, title, body, url, callback)
 
 Push a link to the specified device.
 
