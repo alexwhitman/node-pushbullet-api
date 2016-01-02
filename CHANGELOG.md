@@ -1,5 +1,9 @@
 ## Changelog
 
+### 2.0.0-dev
+
+- Remove support for deprecated `list` and `address` push types.
+
 ### 1.4.3
 
 - Check file existence before trying to push.

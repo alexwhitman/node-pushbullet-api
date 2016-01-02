@@ -21,7 +21,7 @@ pusher.note(deviceParams, noteTitle, noteBody, function(error, response) {
 
 ### Target devices
 
-The push functions (`note`, `address`, `list`, `link`, `file`) have a `deviceParams` parameter which can be several types:
+The push functions (`note`, `link`, `file`) have a `deviceParams` parameter which can be several types:
 
 - If it is a string containing an '@' it is treated as an email address.
 - If it is a string not containing an '@' it is treated as a device iden.
@@ -121,29 +121,6 @@ Push a note to the specified device.
 pusher.note('u1qSJddxeKwOGuGW', 'New Note', 'Note body text', function(error, response) {});
 ```
 
-### PushBullet.address(deviceParams, name, address, callback)
-
-Push an address to the specified device.
-
-```javascript
-pusher.address('u1qSJddxeKwOGuGW', 'Fake Address', '10 Fake Street, Fakesville', function(error, response) {});
-```
-
-### PushBullet.list(deviceParams, name, listItems, callback)
-
-Push a list to the specified device.
-
-```javascript
-var shoppingList = [
-	'steaks',
-	'sausages',
-	'burgers',
-	'buns',
-	'beer'
-];
-pusher.list('u1qSJddxeKwOGuGW', 'BBQ', shoppingList, function(error, response) {});
-```
-
 ### PushBullet.link(deviceParams, name, url, callback)
 
 Push a link to the specified device.
@@ -164,33 +141,11 @@ pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(err
 
 Update a push.
 
-Use to dismiss pushes or to update lists.
+Use to dismiss pushes.
 
 ```javascript
 var updates = {
-	dismissed: true,
-	items: [
-		{
-			text: 'steaks',
-			checked: true
-		}
-		{
-			text: 'sausages',
-			checked: true
-		}
-		{
-			text: 'burgers',
-			checked: true
-		}
-		{
-			text: 'buns',
-			checked: true
-		}
-		{
-			text: 'beer',
-			checked: true
-		}
-	]
+	dismissed: true
 }
 
 pusher.updatePush('udhrSpjAewzdwpCC', updates, function(error, response) {});
