@@ -79,40 +79,6 @@ Delete a device.
 pusher.deleteDevice('u1qSJddxeKwOGuGW', function(error, response) {});
 ```
 
-### PushBullet.contacts([options], callback)
-
-Retrieves a list of pushable contacts.
-
-The `options` parameter can use two attributes `cursor` and`limit`
-to control the data returned.
-
-- `cursor` is used to select the page if the results have been paginated.
-- `limit` is used to limit the number of objects in the reponse.
-
-```javascript
-var options = {
-	limit: 10
-};
-
-pusher.contacts(options, function(error, response) {});
-```
-
-### PushBullet.createContact(name, email, callback)
-
-Create a contact.
-
-```javascript
-pusher.createContact('Bob', 'bob@test.com', function(error, response) {});
-```
-
-### PushBullet.deleteContact(contactIden, callback)
-
-Delete a contact.
-
-```javascript
-pusher.deleteContact('ubdcjAfszs0Smi', function(error, response) {});
-```
-
 ### PushBullet.note(deviceParams, noteTitle, noteBody, callback)
 
 Push a note to the specified device.

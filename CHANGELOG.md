@@ -5,6 +5,7 @@
 - Remove support for deprecated `list` and `address` push types.
 - Add `deleteAllPushes` function.
 - Use `Access-Token` header for authentication.
+- Remove Contacts functions.
 
 ### 1.4.3
 
