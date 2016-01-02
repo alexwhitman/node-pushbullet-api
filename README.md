@@ -159,6 +159,14 @@ Delete a push.
 pusher.deletePush('udhrSpjAewzdwpCC', function(error, response) {});
 ```
 
+### PushBullet.deleteAllPushes(callback)
+
+Delete all pushes associated with the current account.
+
+```javascript
+pusher.deleteAllPushes(function(error, response) {});
+```
+
 ### PushBullet.history([options], callback)
 
 Get the push history.

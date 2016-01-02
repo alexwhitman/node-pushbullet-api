@@ -3,6 +3,7 @@
 ### 2.0.0-dev
 
 - Remove support for deprecated `list` and `address` push types.
+- Add `deleteAllPushes` function.
 
 ### 1.4.3
 
