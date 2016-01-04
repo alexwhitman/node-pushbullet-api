@@ -7,6 +7,8 @@
 - Use `Access-Token` header for authentication.
 - Remove Contacts functions.
 - Rename `updatePush` to `dismissPush`.
+- Add `updateDevice` function.
+- Change signature of `createDevice` to take an Object of device options.
 
 ### 1.4.3
 

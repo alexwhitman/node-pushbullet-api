@@ -63,12 +63,28 @@ var options = {
 pusher.devices(options, function(error, response) {});
 ```
 
-### PushBullet.createDevice(nickname, callback)
+### PushBullet.createDevice(deviceOptions, callback)
 
 Creates a new device.
 
 ```javascript
-pusher.createDevice('Device name', function(error, response) {});
+var deviceOptions = {
+	nickname: 'node-app'
+};
+
+pusher.createDevice(deviceOptions, function(error, response) {});
+```
+
+### PushBullet.updateDevice(deviceIden, deviceOptions, callback)
+
+Creates a new device.
+
+```javascript
+var deviceOptions = {
+	nickname: 'node-app'
+};
+
+pusher.updateDevice(deviceIden, deviceOptions, function(error, response) {});
 ```
 
 ### PushBullet.deleteDevice(deviceIden, callback)
