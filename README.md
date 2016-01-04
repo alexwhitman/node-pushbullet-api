@@ -188,6 +188,22 @@ Subscribe to a channel.
 pusher.unsubscribe('udprOsjAsLtNTRAG', function(error, response) {});
 ```
 
+### PushBullet.muteSubscription(subscriptionIden, callback)
+
+Mute a subscription.
+
+```javascript
+pusher.muteSubscription('udprOsjAsLtNTRAG', function(error, response) {});
+```
+
+### PushBullet.unmuteSubscription(subscriptionIden, callback)
+
+Mute a subscription.
+
+```javascript
+pusher.unmuteSubscription('udprOsjAsLtNTRAG', function(error, response) {});
+```
+
 ### PushBullet.channelInfo(channelTag, callback)
 
 Get information about a channel.

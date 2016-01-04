@@ -9,6 +9,7 @@
 - Rename `updatePush` to `dismissPush`.
 - Add `updateDevice` function.
 - Change signature of `createDevice` to take an Object of device options.
+- Add `muteSubscription` and `unmuteSubscription` functions.
 
 ### 1.4.3
 
