@@ -52,6 +52,7 @@ Retrieves a list of pushable devices.
 The `options` parameter can use two attributes `cursor` and`limit`
 to control the data returned.
 
+- `active` is used to restrict the results to only active devices.
 - `cursor` is used to select the page if the results have been paginated.
 - `limit` is used to limit the number of objects in the reponse.
 
