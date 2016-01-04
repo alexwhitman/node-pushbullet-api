@@ -103,18 +103,12 @@ Push a file to the specified device.
 pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
 ```
 
-### PushBullet.updatePush(pushIden, updates, callback)
+### PushBullet.dismissPush(pushIden, callback)
 
-Update a push.
-
-Use to dismiss pushes.
+Dismiss a push.
 
 ```javascript
-var updates = {
-	dismissed: true
-}
-
-pusher.updatePush('udhrSpjAewzdwpCC', updates, function(error, response) {});
+pusher.dismissPush('udhrSpjAewzdwpCC', function(error, response) {});
 ```
 
 ### PushBullet.deletePush(pushIden, callback)
@@ -140,9 +134,10 @@ Get the push history.
 The `options` parameter can use three attributes `cursor`, `limit` and
 `modified_after` to control the data returned.
 
+- `active` is used to only select undeleted pushes. Defaults to true if not specified.
 - `cursor` is used to select the page if the results have been paginated.
 - `limit` is used to limit the number of objects in the reponse.
-- `modified_after` should be a timestamp.
+- `modified_after` should be a timestamp. Defaults to 0 if not specified.
 
 ```javascript
 var options = {

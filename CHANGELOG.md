@@ -6,6 +6,7 @@
 - Add `deleteAllPushes` function.
 - Use `Access-Token` header for authentication.
 - Remove Contacts functions.
+- Rename `updatePush` to `dismissPush`.
 
 ### 1.4.3
 
