@@ -11,6 +11,7 @@
 - Change signature of `createDevice` to take an Object of device options.
 - Add `muteSubscription` and `unmuteSubscription` functions.
 - Default `devices` to active only.
+- Default `subscriptions` to active only.
 
 ### 1.4.3
 

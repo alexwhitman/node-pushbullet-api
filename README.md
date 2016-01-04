@@ -165,12 +165,23 @@ var options = {
 pusher.history(options, function(error, response) {})
 ```
 
-### PushBullet.subscriptions(callback)
+### PushBullet.subscriptions([options], callback)
 
 Get a list of current subscriptions.
 
+The `options` parameter can use two attributes `cursor` and`limit`
+to control the data returned.
+
+- `active` is used to restrict the results to only active devices.
+- `cursor` is used to select the page if the results have been paginated.
+- `limit` is used to limit the number of objects in the reponse.
+
 ```javascript
-pusher.subscriptions(function(error, response) {});
+var options = {
+	limit: 10
+};
+
+pusher.subscriptions(options, function(error, response) {});
 ```
 
 ### PushBullet.subscribe(channelTag, callback)
