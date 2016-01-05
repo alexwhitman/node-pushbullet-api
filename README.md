@@ -210,7 +210,7 @@ pusher.muteSubscription('udprOsjAsLtNTRAG', function(error, response) {});
 
 ### PushBullet.unmuteSubscription(subscriptionIden, callback)
 
-Mute a subscription.
+Unmute a subscription.
 
 ```javascript
 pusher.unmuteSubscription('udprOsjAsLtNTRAG', function(error, response) {});
@@ -223,6 +223,56 @@ Get information about a channel.
 ```javascript
 pusher.channelInfo('jblow', function(error, response) {});
 ```
+
+### PushBullet.chats([options], callback)
+
+Get a list of current chats.
+
+The `options` parameter can use two attributes `cursor` and`limit`
+to control the data returned.
+
+- `active` is used to restrict the results to only active devices.
+- `cursor` is used to select the page if the results have been paginated.
+- `limit` is used to limit the number of objects in the reponse.
+
+```javascript
+var options = {
+	limit: 10
+};
+
+pusher.chats(options, function(error, response) {});
+```
+
+### PushBullet.createChat(email, callback)
+
+Create a new chat.
+
+```javascript
+pusher.createChat('a@b.com', function(error, response) {});
+```
+
+### PushBullet.deleteChat(chatIden, callback)
+
+Delete a chat.
+
+```javascript
+pusher.deleteChat('udprOsjAsLtNTRAG', function(error, response) {});
+```
+
+### PushBullet.muteChat(chatIden, callback)
+
+Mute a chat.
+
+```javascript
+pusher.muteChat('udprOsjAsLtNTRAG', function(error, response) {});
+```
+
+### PushBullet.unmuteChat(chatIden, callback)
+
+Unmute a chat.
+
+```javascript
+pusher.unmuteChat('udprOsjAsLtNTRAG', function(error, response) {});
 
 ### PushBullet.stream()
 

@@ -12,6 +12,7 @@
 - Add `muteSubscription` and `unmuteSubscription` functions.
 - Default `devices` to active only.
 - Default `subscriptions` to active only.
+- Add chats functions.
 
 ### 1.4.3
 
