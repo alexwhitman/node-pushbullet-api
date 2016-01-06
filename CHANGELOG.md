@@ -13,6 +13,7 @@
 - Default `devices` to active only.
 - Default `subscriptions` to active only.
 - Add chats functions.
+- Add ephemerals support for sending SMS messages, clipboard messages and dismissals.
 
 ### 1.4.3
 

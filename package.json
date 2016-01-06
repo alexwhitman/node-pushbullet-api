@@ -18,6 +18,7 @@
   "author": "Alex Whitman <alex@alexwhitman.com>",
   "license": "BSD",
   "dependencies": {
+    "clone": "^1.0.2",
     "mime": "~1.2.11",
     "request": "~2.44.0",
     "websocket": "~1.0.8"

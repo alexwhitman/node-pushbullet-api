@@ -274,6 +274,50 @@ Unmute a chat.
 ```javascript
 pusher.unmuteChat('udprOsjAsLtNTRAG', function(error, response) {});
 
+### PushBullet.sendSMS(options, callback)
+
+Send an SMS through a device.
+
+```javascript
+var options = {
+	source_user_iden: 'ujpah72o0',              // The user iden of the user sending this message
+	target_device_iden: 'ujpah72o0sjAoRtnM0jc', // The iden of the device corresponding to the phone that should send the SMS
+	conversation_iden: '+1 303 555 1212',       // Phone number to send the SMS to
+	message: 'Hello!'                           // The SMS message to send
+};
+
+pusher.sendSMS(options, function(error, response) {});
+```
+
+### PushBullet.sendClipboard(options, callback)
+
+Send clipboard content.
+
+```javascript
+var options = {
+    source_user_iden: "ujpah72o0",              // The iden of the user sending this message
+    source_device_iden: "ujpah72o0sjAoRtnM0jc", // The iden of the device sending this message
+    body: "http://www.google.com",              // The text to copy to the clipboard
+};
+
+pusher.sendClipboard(options, function(error, response) {});
+```
+
+### PushBullet.dismissEphemeral(options, callback)
+
+Dismiss an ephemeral.
+
+```javascript
+var options = {
+	package_name: 'com.pushbullet.android', // Set to the package_name field from the mirrored notification
+	notification_id: '-8',                  // Set to the notification_id field from the mirrored notification
+	notification_tag: null,                 // Set to the notification_tag field from the mirrored notification
+	source_user_iden: 'ujpah72o0',          // Set to the source_user_iden field from the mirrored notification
+};
+
+pusher.dismissEphemeral(options, function(error, response) {});
+```
+
 ### PushBullet.stream()
 
 Returns a new stream listener which will emit events from the stream.
