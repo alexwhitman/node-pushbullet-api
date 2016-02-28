@@ -16,7 +16,7 @@
     "rest"
   ],
   "author": "Alex Whitman <alex@alexwhitman.com>",
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "dependencies": {
     "clone": "^1.0.2",
     "mime": "~1.2.11",
