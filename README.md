@@ -117,7 +117,11 @@ pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', function(error,
 Push a file to the specified device.
 
 ```javascript
+// Send a local file
 pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
+
+// Send a url link
+pusher.file('u1qSJddxeKwOGuGW', 'https://www.pushbullet.com/img/header/logo.png', 'PushBullet logo!', function(error, response) {});
 ```
 
 ### PushBullet.dismissPush(pushIden, callback)
