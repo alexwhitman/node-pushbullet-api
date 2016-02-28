@@ -15,6 +15,7 @@
 - Add chats functions.
 - Add ephemerals support for sending SMS messages, clipboard messages and dismissals.
 - `file` can now use a http URL as well path to a file on disk. (Thanks @PaulinePro)
+- `link` now has a `body` attribute.
 
 ### 1.4.3
 
