@@ -1,6 +1,8 @@
 ## Changelog
 
-### 2.0.0-dev
+### 2.0.0
+
+**Note that this major version release contains backwards incompatible changes.**
 
 - Remove support for deprecated `list` and `address` push types.
 - Add `deleteAllPushes` function.
