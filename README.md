@@ -273,6 +273,7 @@ Unmute a chat.
 
 ```javascript
 pusher.unmuteChat('udprOsjAsLtNTRAG', function(error, response) {});
+```
 
 ### PushBullet.sendSMS(options, callback)
 
