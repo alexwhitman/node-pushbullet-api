@@ -232,7 +232,7 @@ describe('pushbullet', function () {
   })
 
   it('should push a link using a proimse', done => {
-    pusher.link({}, 'GitHub', `https://github.com`).then(res => {
+    pusher.link({}, 'GitHub', `https://github.com`, 'My message').then(res => {
       res.should.be.an('object')
       res.title.should.equal('GitHub')
       done()
@@ -276,7 +276,7 @@ describe('pushbullet', function () {
     })
   })
 
-  it('should push a file using a proimse', done => {
+  it('should get pushes using a promise', done => {
     pusher.history().then(res => {
       res.should.be.an('object')
       res.should.have.property('pushes')
