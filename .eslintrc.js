@@ -12,6 +12,9 @@ module.exports = {
             "error",
             "unix"
         ],
+        "no-trailing-spaces": [
+            "error"
+        ],
         "quotes": [
             "error",
             "single"
