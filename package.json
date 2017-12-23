@@ -23,5 +23,8 @@
     "node-forge": "^0.7.1",
     "request": "^2.79.0",
     "websocket": "^1.0.24"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1"
   }
 }
