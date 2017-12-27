@@ -441,5 +441,5 @@ pusher.me(function(error, user) {
 	};
 
 	pusher.sendSMS(options, function(error, response) {}); // options are encrypted automatically
-};
+});
 ```
