@@ -104,12 +104,12 @@ Push a note to the specified device.
 pusher.note('u1qSJddxeKwOGuGW', 'New Note', 'Note body text', function(error, response) {});
 ```
 
-### PushBullet.link(deviceParams, name, url, callback)
+### PushBullet.link(deviceParams, name, url, body, callback)
 
 Push a link to the specified device.
 
 ```javascript
-pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', function(error, response) {});
+pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', 'Note body text', function(error, response) {});
 ```
 
 ### PushBullet.file(deviceParams, filePath, message, callback)
