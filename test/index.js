@@ -1,9 +1,9 @@
 'use strict'
 
 /* global describe it */
-const apiKey = process.env.npm_config_key
-const Pushbullet = require('../')
-const p = require('path')
+var apiKey = process.env.npm_config_key
+var Pushbullet = require('../')
+var p = require('path')
 
 require('chai').should()
 require('chai').assert
@@ -12,7 +12,7 @@ if (!apiKey || apiKey.length === 0) {
   throw new Error('Missing API key, please run `npm test --key={your api key}`')
 }
 
-const pusher = new Pushbullet(apiKey)
+var pusher = new Pushbullet(apiKey)
 
 describe('pushbullet', function () {
   this.timeout(30000)
@@ -71,7 +71,7 @@ describe('pushbullet', function () {
       res.active.should.equal(true)
       res.should.have.property('iden')
 
-      const iden = res.iden
+      var iden = res.iden
 
       pusher.muteChat(iden, (err, res) => {
         if (err) {
@@ -103,7 +103,7 @@ describe('pushbullet', function () {
   })
 
   it('should create, mute, unmute and delete a chat using promises', done => {
-    let iden
+    var iden
 
     pusher.createChat('test@email.com').then(res => {
       res.should.be.an('object')
@@ -154,7 +154,7 @@ describe('pushbullet', function () {
         return done(err)
       }
 
-      const iden = res.iden
+      var iden = res.iden
 
       res.should.be.an('object')
       res.should.have.property('iden')
@@ -180,7 +180,7 @@ describe('pushbullet', function () {
   })
 
   it('should create, update and delete a device using a promise', done => {
-    let iden
+    var iden
 
     pusher.createDevice({ nickname: 'node-test' }).then(res => {
       iden = res.iden
@@ -390,7 +390,7 @@ describe('pushbullet', function () {
       res.should.have.property('channel')
       res.active.should.equal(true)
 
-      const iden = res.iden
+      var iden = res.iden
 
       pusher.muteSubscription(iden, (err, res) => {
         if (err) {
@@ -422,7 +422,7 @@ describe('pushbullet', function () {
   })
 
   it('should subscripe, mute, unmute, and unsubscribe to a channel using promises', done => {
-    let iden
+    var iden
 
     pusher.subscribe('xkcd').then(res => {
       iden = res.iden
@@ -449,7 +449,7 @@ describe('pushbullet', function () {
   })
 
   it('should send clipboard using a callback', done => {
-    const clipOptions = {
+    var clipOptions = {
       body: '你好！'
     }
 
@@ -483,7 +483,7 @@ describe('pushbullet', function () {
   })
 
   it('should send clipboard using a promise', done => {
-    const clipOptions = {
+    var clipOptions = {
       body: '你好！'
     }
 
