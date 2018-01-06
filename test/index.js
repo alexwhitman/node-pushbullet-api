@@ -17,7 +17,7 @@ var pusher = new Pushbullet(apiKey)
 describe('pushbullet', function () {
   this.timeout(30000)
 
-  it('should get user information using a callback', done => {
+  it('should get user information using a callback', (done) => {
     pusher.me((err, res) => {
       if (err) {
         return done(err)
