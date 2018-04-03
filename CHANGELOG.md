@@ -1,10 +1,13 @@
 ## Changelog
 
+### 2.2.0
+
+- Add promise support.
+
 ### 2.1.0
 
 - Add end to end encryption support.
 - Support the `body` parameter for the `link` push type.
-- Add promise support.
 
 ### 2.0.0
 
