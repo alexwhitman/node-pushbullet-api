@@ -28,12 +28,22 @@ The push functions (`note`, `link`, `file`) have a `deviceParams` parameter whic
 - If it is a number it is treated as a device id.
 - If it is an object it is assumed to have one of the 'target parameters' as defined on https://docs.pushbullet.com/v2/pushes/ as an attribute.  It can also have an optional `source_device_iden` attribute.  If the object is empty, `{}`, then the push is sent to all devices.
 
-## Callbacks
+### Callbacks
 
 Each callback receives two arguments.  For a successful request the first argument will be `null` or `undefined`
 and the second argument will be the parsed JSON response from the API.
 
 If an error occurs at any part of the request the first argument will be an Error object.
+
+### Promises
+
+Promises are supported and can be used in place of the callback method.
+
+```javascript
+pusher.devices().then(function(devices) {
+	// devices is the JSON response from the API
+});
+```
 
 ## API
 
