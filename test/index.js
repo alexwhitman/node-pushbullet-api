@@ -380,7 +380,7 @@ describe('pushbullet', function () {
 		}).catch(done);
 	});
 
-	it('should subscripe, mute, unmute, and unsubscribe to a channel using callbacks', done => {
+	it('should subscribe, mute, unmute, and unsubscribe to a channel using callbacks', done => {
 		pusher.subscribe('xkcd', (err, res) => {
 			if (err) {
 				return done(err);
@@ -421,7 +421,7 @@ describe('pushbullet', function () {
 		});
 	});
 
-	it('should subscripe, mute, unmute, and unsubscribe to a channel using promises', done => {
+	it('should subscribe, mute, unmute, and unsubscribe to a channel using promises', done => {
 		var iden;
 
 		pusher.subscribe('xkcd').then(res => {
