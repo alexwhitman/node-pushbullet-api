@@ -24,7 +24,7 @@
     "node-forge": "^0.7.5",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
-    "websocket": "^1.0.26"
+    "ws": "^6.0.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
