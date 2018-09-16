@@ -47,6 +47,15 @@ pusher.devices().then(function(devices) {
 
 ## API
 
+### new PushBullet(apiKey, options)
+
+Creates a new PushBullet object.
+
+The `apiKey` parameter is the string API key provided by PushBullet.
+The `options` parameter is optional and has one attribute:
+
+- `fullResponses` (default `false`): By default, only the response body is returned.  Setting this to true will make the full response to be returned, useful if access to the headers are required.
+
 ### PushBullet.me(callback);
 
 Get the current user's information.
