@@ -1,5 +1,11 @@
 ## Changelog
 
+### 2.3.0
+
+- Switch to `ws` module for the websocket stream.
+- Fix `close` on stream connection to actually close.
+- Add `fullResponses` option to return response objects from requests.
+
 ### 2.2.0
 
 - Add promise support.
