@@ -1,5 +1,9 @@
 ## Changelog
 
+### 2.4.0
+
+- Reconnect to websocket stream if disconnected.
+
 ### 2.3.0
 
 - Switch to `ws` module for the websocket stream.
