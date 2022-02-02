@@ -1,5 +1,12 @@
 ## Changelog
 
+### 3.0.0-dev
+
+**Note that this major version release contains backwards incompatible changes.**
+
+- Callback functionality has been removed. Callbacks can still be used by using `util.callbackify()`.
+- `request` has been replaced by `node-fetch`. Full API responses are returned by function calls.
+
 ### 2.4.0
 
 - Reconnect to websocket stream if disconnected.
