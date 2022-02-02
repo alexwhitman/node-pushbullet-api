@@ -2,7 +2,7 @@
   "name": "pushbullet",
   "version": "2.4.0",
   "description": "Use PushBullets REST API",
-  "main": "index.js",
+  "main": "./lib/pushbullet.js",
   "type": "module",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
@@ -22,9 +22,8 @@
   "dependencies": {
     "clone": "^2.1.2",
     "mime": "^2.4.0",
+    "node-fetch": "^3.2.0",
     "node-forge": "^0.7.6",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.5",
     "ws": "^6.1.2"
   },
   "devDependencies": {
