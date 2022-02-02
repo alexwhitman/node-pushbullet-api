@@ -7,16 +7,12 @@ A Node.js module for using the [PushBullet REST API](https://www.pushbullet.com/
 This module is very simple to use.  All you need is your PushBullet API key and you can begin pushing.
 
 ```javascript
-var PushBullet = require('pushbullet');
-var pusher = new PushBullet('YOUR-API-KEY');
+let PushBullet = require('pushbullet');
+let pusher = new PushBullet('YOUR-API-KEY');
 
-pusher.devices(function(error, response) {
-	// response is the JSON response from the API
-});
+let response = await pusher.devices();
 
-pusher.note(deviceParams, noteTitle, noteBody, function(error, response) {
-	// response is the JSON response from the API
-});
+let response = await pusher.note(deviceParams, noteTitle, noteBody);
 ```
 
 ### Target devices
@@ -28,43 +24,32 @@ The push functions (`note`, `link`, `file`) have a `deviceParams` parameter whic
 - If it is a number it is treated as a device id.
 - If it is an object it is assumed to have one of the 'target parameters' as defined on https://docs.pushbullet.com/v2/pushes/ as an attribute.  It can also have an optional `source_device_iden` attribute.  If the object is empty, `{}`, then the push is sent to all devices.
 
-### Callbacks
+### Async/Await
 
-Each callback receives two arguments.  For a successful request the first argument will be `null` or `undefined`
-and the second argument will be the parsed JSON response from the API.
-
-If an error occurs at any part of the request the first argument will be an Error object.
-
-### Promises
-
-Promises are supported and can be used in place of the callback method.
+Version 2 of the module supported callback and promise based execution. Version 3 uses async/await. Callbacks can still be used by utilising `util.callbackify()`.
 
 ```javascript
-pusher.devices().then(function(devices) {
-	// devices is the JSON response from the API
-});
+let response = await pusher.devices();
+console.log(await response.json());
 ```
 
 ## API
 
-### new PushBullet(apiKey, options)
+### new PushBullet(apiKey)
 
 Creates a new PushBullet object.
 
 The `apiKey` parameter is the string API key provided by PushBullet.
-The `options` parameter is optional and has one attribute:
 
-- `fullResponses` (default `false`): By default, only the response body is returned.  Setting this to true will make the full response to be returned, useful if access to the headers are required.
-
-### PushBullet.me(callback);
+### PushBullet.me();
 
 Get the current user's information.
 
 ```javascript
-pusher.me(function(err, response) {});
+await pusher.me();
 ```
 
-### PushBullet.devices([options], callback)
+### PushBullet.devices([options])
 
 Retrieves a list of pushable devices.
 
@@ -76,83 +61,83 @@ to control the data returned.
 - `limit` is used to limit the number of objects in the reponse.
 
 ```javascript
-var options = {
+let options = {
 	limit: 10
 };
 
-pusher.devices(options, function(error, response) {});
+await pusher.devices(options);
 ```
 
-### PushBullet.createDevice(deviceOptions, callback)
+### PushBullet.createDevice(deviceOptions)
 
 Creates a new device.
 
 ```javascript
-var deviceOptions = {
+let deviceOptions = {
 	nickname: 'node-app'
 };
 
-pusher.createDevice(deviceOptions, function(error, response) {});
+await pusher.createDevice(deviceOptions);
 ```
 
-### PushBullet.updateDevice(deviceIden, deviceOptions, callback)
+### PushBullet.updateDevice(deviceIden, deviceOptions)
 
 Creates a new device.
 
 ```javascript
-var deviceOptions = {
+let deviceOptions = {
 	nickname: 'node-app'
 };
 
-pusher.updateDevice(deviceIden, deviceOptions, function(error, response) {});
+await pusher.updateDevice(deviceIden, deviceOptions);
 ```
 
-### PushBullet.deleteDevice(deviceIden, callback)
+### PushBullet.deleteDevice(deviceIden)
 
 Delete a device.
 
 ```javascript
-pusher.deleteDevice('u1qSJddxeKwOGuGW', function(error, response) {});
+await pusher.deleteDevice('u1qSJddxeKwOGuGW');
 ```
 
-### PushBullet.note(deviceParams, noteTitle, noteBody, callback)
+### PushBullet.note(deviceParams, noteTitle, noteBody)
 
 Push a note to the specified device.
 
 ```javascript
-pusher.note('u1qSJddxeKwOGuGW', 'New Note', 'Note body text', function(error, response) {});
+await pusher.note('u1qSJddxeKwOGuGW', 'New Note', 'Note body text');
 ```
 
-### PushBullet.link(deviceParams, name, url, body, callback)
+### PushBullet.link(deviceParams, name, url, body)
 
 Push a link to the specified device.
 
 ```javascript
-pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', 'Note body text', function(error, response) {});
+await pusher.link('u1qSJddxeKwOGuGW', 'GitHub', 'https://github.com/', 'Note body text');
 ```
 
-### PushBullet.file(deviceParams, filePath, message, callback)
+### PushBullet.file(deviceParams, filePath, message)
 
 Push a file to the specified device.
 
 ```javascript
-pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!', function(error, response) {});
+await pusher.file('u1qSJddxeKwOGuGW', '/path/to/file', 'Important file!');
 ```
 
-### PushBullet.dismissPush(pushIden, callback)
+### PushBullet.dismissPush(pushIden)
 
 Dismiss a push.
 
 ```javascript
-pusher.dismissPush('udhrSpjAewzdwpCC', function(error, response) {});
+await pusher.dismissPush('udhrSpjAewzdwpCC');
 ```
 
-### PushBullet.deletePush(pushIden, callback)
+### PushBullet.deletePush(pushIden)
 
 Delete a push.
 
 ```javascript
-pusher.deletePush('udhrSpjAewzdwpCC', function(error, response) {});
+await pusher.deletePush('udhrSpjAewzdwpCC');
 ```
 
 ### PushBullet.deleteAllPushes(callback)
@@ -160,10 +145,10 @@ pusher.deletePush('udhrSpjAewzdwpCC', function(error, response) {});
 Delete all pushes associated with the current account.
 
 ```javascript
-pusher.deleteAllPushes(function(error, response) {});
+await pusher.deleteAllPushes(function(error, response) {});
 ```
 
-### PushBullet.history([options], callback)
+### PushBullet.history([options])
 
 Get the push history.
 
@@ -176,15 +161,15 @@ The `options` parameter can use three attributes `cursor`, `limit` and
 - `modified_after` should be a timestamp. Defaults to 0 if not specified.
 
 ```javascript
-var options = {
+let options = {
 	limit: 10,
 	modified_after: 1400000000.00000
 };
 
-pusher.history(options, function(error, response) {})
+await pusher.history(options)
 ```
 
-### PushBullet.subscriptions([options], callback)
+### PushBullet.subscriptions([options])
 
 Get a list of current subscriptions.
 
@@ -196,54 +181,54 @@ to control the data returned.
 - `limit` is used to limit the number of objects in the reponse.
 
 ```javascript
-var options = {
+let options = {
 	limit: 10
 };
 
-pusher.subscriptions(options, function(error, response) {});
+await pusher.subscriptions(options);
 ```
 
-### PushBullet.subscribe(channelTag, callback)
+### PushBullet.subscribe(channelTag)
 
 Subscribe to a channel.
 
 ```javascript
-pusher.subscribe('jblow', function(error, response) {});
+await pusher.subscribe('jblow');
 ```
 
-### PushBullet.unsubscribe(subscriptionIden, callback)
+### PushBullet.unsubscribe(subscriptionIden)
 
 Subscribe to a channel.
 
 ```javascript
-pusher.unsubscribe('udprOsjAsLtNTRAG', function(error, response) {});
+await pusher.unsubscribe('udprOsjAsLtNTRAG');
 ```
 
-### PushBullet.muteSubscription(subscriptionIden, callback)
+### PushBullet.muteSubscription(subscriptionIden)
 
 Mute a subscription.
 
 ```javascript
-pusher.muteSubscription('udprOsjAsLtNTRAG', function(error, response) {});
+await pusher.muteSubscription('udprOsjAsLtNTRAG');
 ```
 
-### PushBullet.unmuteSubscription(subscriptionIden, callback)
+### PushBullet.unmuteSubscription(subscriptionIden)
 
 Unmute a subscription.
 
 ```javascript
-pusher.unmuteSubscription('udprOsjAsLtNTRAG', function(error, response) {});
+await pusher.unmuteSubscription('udprOsjAsLtNTRAG');
 ```
 
-### PushBullet.channelInfo(channelTag, callback)
+### PushBullet.channelInfo(channelTag)
 
 Get information about a channel.
 
 ```javascript
-pusher.channelInfo('jblow', function(error, response) {});
+await pusher.channelInfo('jblow');
 ```
 
-### PushBullet.chats([options], callback)
+### PushBullet.chats([options])
 
 Get a list of current chats.
 
@@ -255,87 +240,87 @@ to control the data returned.
 - `limit` is used to limit the number of objects in the reponse.
 
 ```javascript
-var options = {
+let options = {
 	limit: 10
 };
 
-pusher.chats(options, function(error, response) {});
+await pusher.chats(options);
 ```
 
-### PushBullet.createChat(email, callback)
+### PushBullet.createChat(email)
 
 Create a new chat.
 
 ```javascript
-pusher.createChat('a@b.com', function(error, response) {});
+await pusher.createChat('a@b.com');
 ```
 
-### PushBullet.deleteChat(chatIden, callback)
+### PushBullet.deleteChat(chatIden)
 
 Delete a chat.
 
 ```javascript
-pusher.deleteChat('udprOsjAsLtNTRAG', function(error, response) {});
+await pusher.deleteChat('udprOsjAsLtNTRAG');
 ```
 
-### PushBullet.muteChat(chatIden, callback)
+### PushBullet.muteChat(chatIden)
 
 Mute a chat.
 
 ```javascript
-pusher.muteChat('udprOsjAsLtNTRAG', function(error, response) {});
+await pusher.muteChat('udprOsjAsLtNTRAG');
 ```
 
-### PushBullet.unmuteChat(chatIden, callback)
+### PushBullet.unmuteChat(chatIden)
 
 Unmute a chat.
 
 ```javascript
-pusher.unmuteChat('udprOsjAsLtNTRAG', function(error, response) {});
+await pusher.unmuteChat('udprOsjAsLtNTRAG');
 ```
 
-### PushBullet.sendSMS(options, callback)
+### PushBullet.sendSMS(options)
 
 Send an SMS through a device.
 
 ```javascript
-var options = {
+let options = {
 	source_user_iden: 'ujpah72o0',              // The user iden of the user sending this message
 	target_device_iden: 'ujpah72o0sjAoRtnM0jc', // The iden of the device corresponding to the phone that should send the SMS
 	conversation_iden: '+1 303 555 1212',       // Phone number to send the SMS to
 	message: 'Hello!'                           // The SMS message to send
 };
 
-pusher.sendSMS(options, function(error, response) {});
+await pusher.sendSMS(options);
 ```
 
-### PushBullet.sendClipboard(options, callback)
+### PushBullet.sendClipboard(options)
 
 Send clipboard content.
 
 ```javascript
-var options = {
+let options = {
     source_user_iden: "ujpah72o0",              // The iden of the user sending this message
     source_device_iden: "ujpah72o0sjAoRtnM0jc", // The iden of the device sending this message
     body: "http://www.google.com",              // The text to copy to the clipboard
 };
 
-pusher.sendClipboard(options, function(error, response) {});
+await pusher.sendClipboard(options);
 ```
 
-### PushBullet.dismissEphemeral(options, callback)
+### PushBullet.dismissEphemeral(options)
 
 Dismiss an ephemeral.
 
 ```javascript
-var options = {
+let options = {
 	package_name: 'com.pushbullet.android', // Set to the package_name field from the mirrored notification
 	notification_id: '-8',                  // Set to the notification_id field from the mirrored notification
 	notification_tag: null,                 // Set to the notification_tag field from the mirrored notification
 	source_user_iden: 'ujpah72o0',          // Set to the source_user_iden field from the mirrored notification
 };
 
-pusher.dismissEphemeral(options, function(error, response) {});
+await pusher.dismissEphemeral(options);
 ```
 
 ### PushBullet.stream()
@@ -343,7 +328,7 @@ pusher.dismissEphemeral(options, function(error, response) {});
 Returns a new stream listener which will emit events from the stream.
 
 ```javascript
-var stream = pusher.stream();
+let stream = pusher.stream();
 ```
 
 #### connect()
@@ -444,7 +429,7 @@ pusher.me(function(error, user) {
 	// needed to call me() to gather user iden
 	pusher.enableEncryption('YOUR-END-TO-END-PASSWORD', user.iden);
 
-	var stream = pusher.stream();
+	let stream = pusher.stream();
 
 	stream.on('message', function(message) {
 		console.log(message); // message is decrypted automatically
@@ -452,13 +437,13 @@ pusher.me(function(error, user) {
 
 	stream.connect();
 
-	var options = {
+	let options = {
 		source_user_iden: 'ujpah72o0',
 		target_device_iden: 'ujpah72o0sjAoRtnM0jc',
 		conversation_iden: '+1 303 555 1212',
 		message: 'Hello!'
 	};
 
-	pusher.sendSMS(options, function(error, response) {}); // options are encrypted automatically
+	await pusher.sendSMS(options); // options are encrypted automatically
 });
 ```
