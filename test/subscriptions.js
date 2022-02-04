@@ -1,3 +1,5 @@
+/* global describe,it */
+
 import nock        from 'nock';
 import PushBullet  from '../lib/pushbullet.js';
 import { should }  from 'chai';

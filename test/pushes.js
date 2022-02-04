@@ -1,3 +1,5 @@
+/* global describe,it */
+
 import { fileURLToPath } from 'url';
 import nock        from 'nock';
 import PushBullet  from '../lib/pushbullet.js';
@@ -62,11 +64,11 @@ describe('PushBullet.file()', () => {
 				upload_url : 'https://upload.pushbullet.com/upload-legacy/some-hash'
 			});
 
-		nock('https://upload.pushbullet.com', {
-				reqheaders : {
-					'Content-Type' : headerValue => headerValue.startsWith('multipart/form-data; boundary')
-				}
-			})
+		const uploadHeaders = {
+			'Content-Type' : headerValue => headerValue.startsWith('multipart/form-data; boundary')
+		};
+
+		nock('https://upload.pushbullet.com', { reqheaders : uploadHeaders })
 			.post('/upload-legacy/some-hash', /.*Content-Disposition: form-data;.*/gi)
 			.reply(204);
 
