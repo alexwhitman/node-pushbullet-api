@@ -73,9 +73,9 @@ describe('PushBullet.updateDevice()', () => {
 	it('should update a device', async () => {
 		nock(PushBullet.API_BASE, { reqheaders : requestHeaders })
 			.post('/devices/device-iden', {
-				nickname    : 'device-nickname',
-				model       : 'device-model',
-				has_sms     : false
+				nickname : 'device-nickname',
+				model    : 'device-model',
+				has_sms  : false
 			})
 			.reply(200, {});
 
