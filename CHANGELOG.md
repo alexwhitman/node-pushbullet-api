@@ -6,6 +6,7 @@
 
 - Callback functionality has been removed. Callbacks can still be used by using `util.callbackify()`.
 - `request` has been replaced by `node-fetch`. Full API responses are returned by function calls.
+- Add support for for text API.
 
 ### 2.4.0
 

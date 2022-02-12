@@ -279,6 +279,40 @@ Unmute a chat.
 await pusher.unmuteChat('udprOsjAsLtNTRAG');
 ```
 
+### PushBullet.createText(deviceIden, addresses, message, [options])
+
+Create a new text.
+
+The `options` parameter can be used to add additional information to the text request.
+
+- `file_url` is a URL of a file to send with the text.
+- `file_type` is the mime type of the file being sent. Required if `file_url` is used.
+
+Other options are available, see https://docs.pushbullet.com/#text
+
+```javascript
+await pusher.createText('udprOsjAsLtNTRAG', '+13035551212', 'Test Message', {});
+```
+
+### PushBullet.updateText(textIden, options)
+
+Update a chat.
+
+`options` is an object representing the text attributes to update.
+See https://docs.pushbullet.com/#text for the available attributes and structure.
+
+```javascript
+await pusher.updateText('udprOsjAsLtNTRAG', {});
+```
+
+### PushBullet.deleteText(textIden)
+
+Delete a text.
+
+```javascript
+await pusher.deleteText('udprOsjAsLtNTRAG');
+```
+
 ### PushBullet.sendSMS(options)
 
 Send an SMS through a device.
