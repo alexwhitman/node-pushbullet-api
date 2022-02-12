@@ -459,25 +459,25 @@ stream.on('push', function(push) {
 Enables End-to-End encryption.
 
 ```javascript
-pusher.me(function(error, user) {
-	// needed to call me() to gather user iden
-	pusher.enableEncryption('YOUR-END-TO-END-PASSWORD', user.iden);
+let response = await pusher.me();
+let user = await response.json();
 
-	let stream = pusher.stream();
+pusher.enableEncryption('YOUR-END-TO-END-PASSWORD', user.iden);
 
-	stream.on('message', function(message) {
-		console.log(message); // message is decrypted automatically
-	});
+let stream = pusher.stream();
 
-	stream.connect();
-
-	let options = {
-		source_user_iden: 'ujpah72o0',
-		target_device_iden: 'ujpah72o0sjAoRtnM0jc',
-		conversation_iden: '+1 303 555 1212',
-		message: 'Hello!'
-	};
-
-	await pusher.sendSMS(options); // options are encrypted automatically
+stream.on('message', function(message) {
+	console.log(message); // message is decrypted automatically
 });
+
+stream.connect();
+
+let options = {
+	source_user_iden: 'ujpah72o0',
+	target_device_iden: 'ujpah72o0sjAoRtnM0jc',
+	conversation_iden: '+1 303 555 1212',
+	message: 'Hello!'
+};
+
+await pusher.sendSMS(options); // options are encrypted automatically
 ```
