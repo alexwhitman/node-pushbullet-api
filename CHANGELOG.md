@@ -1,6 +1,6 @@
 ## Changelog
 
-### 3.0.0-dev
+### 3.0.0
 
 **Note that this major version release contains backwards incompatible changes.**
 

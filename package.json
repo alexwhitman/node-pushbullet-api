@@ -1,6 +1,6 @@
 {
   "name": "pushbullet",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "description": "Use PushBullets REST API",
   "main": "./lib/pushbullet.js",
   "type": "module",
