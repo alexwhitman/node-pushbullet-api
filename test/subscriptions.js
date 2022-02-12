@@ -111,19 +111,3 @@ describe('PushBullet.unmuteSubscription()', () => {
 		j.should.be.an.an('object');
 	});
 });
-
-describe('PushBullet.channelInfo()', () => {
-	it('should mute a chat', async () => {
-		nock(PushBullet.API_BASE, { reqheaders : requestHeaders })
-			.get('/channel-info')
-			.query({ tag : 'channel-tag' })
-			.reply(200, {});
-
-		const pb = new PushBullet(accessToken);
-		const response = await pb.channelInfo('channel-tag');
-		response.status.should.equal(200);
-
-		const j = await response.json();
-		j.should.be.an.an('object');
-	});
-});

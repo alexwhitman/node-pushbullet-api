@@ -8,6 +8,7 @@
 - `request` has been replaced by `node-fetch`. Full API responses are returned by function calls.
 - Add support for for text API.
 - Deprecate `sendSMS()`, this is deprecated in the API and is replaced by `createText()`.
+- Add `createChannel()`.
 
 ### 2.4.0
 
